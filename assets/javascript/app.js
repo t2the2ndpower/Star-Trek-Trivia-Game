@@ -12,6 +12,9 @@ ID's from html divs
 "playComm" - the area that holds communications we want to display to the player
 "playNews" - commentary on the game as it's beening played
 "thanks" - the thanks for playing message
+"questImg" - the place where the image associated with the question should be displayed
+"thisQuestion" - the place where the question in play should appear
+"theseAnswers" - the place where the answer options should appear
 
 
 
