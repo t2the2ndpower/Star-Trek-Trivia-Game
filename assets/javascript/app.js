@@ -25,11 +25,21 @@ ID's from html divs
 
 // Variables to be used
 
-var wins;
+var wins; // holds the count for wins achieved
 
-var losses;
+var losses; // holds the count for losses achieved
 
-var remainingTime;
+var remainingTime;  // counts down the time
+
+var answerOptions;  //  an array of answer options
+
+var answerOptIndex;  //  the randomly generated index number used to determine the question to ask and the associated answer
+
+var wrongAnswers;  //  an array of wrong answer options
+
+var wrongAnsIndex;  //  the randomly generated index number used to determine the series of wrong answers to display alongside the correct answer
+
+
 
 // Array of Objects for questions and answers
 
@@ -62,6 +72,7 @@ var questions = [
     },
 ];
 
+// array of wrong options
 
 var wrongAnswers = [
     "Luxana Troy",
@@ -93,3 +104,44 @@ var wrongAnswers = [
     "Westley Crusher"
 ];
 
+
+// on click function to start the game
+
+$("btn").click("start the game");
+
+// timer that displays the countdown to the next question
+
+var remainingTime = setInterval(myTimer, 1000);
+var timeLeft = 30;
+function myTimer() {
+  //var newTimeLeft = timeLeft - 1;
+  document.getElementById("timer").innerHTML = (timeLeft--);
+  //return newTimeLeft = timeLeft;
+
+  if(timeLeft === -1){
+clearInterval(remainingTime);
+  }
+};
+
+remainingTime;
+
+// timer that marks and answer wrong if time runs out and starts over with a new question once time is up
+
+ function remainingTime (){
+
+};
+
+
+// a random index number to use as a selection method for determining the question to ask
+
+var answerOptIndex = Math.floor(Math.random(1) * questions.length);
+
+// a random index number to use as a selection method for gathering all of the wrong answers
+
+var wrongAnsIndex = Math.floor(Math.random(1) * wrongAnswers.length);
+
+
+// a <ul> of guesses that include the wrong and right guesses
+
+
+// the total number of correct and incorrect guesses
