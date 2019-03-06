@@ -10,14 +10,73 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Star Trek Trivia!</title>
 </head>
-<body>
+<body class = "gameStyle">
+    <div class = "container">
+        <!-- <div class="jumbotron"> -->
+            <h1 class="display-3">Star Trek Trivia!</h1>
+            
+                <div id="gameStartDiv">
+                    
+                    <p class="lead"><h2 id="timer"></h2></p>
+                    <p>Do you know what you think you know about Star Trek?!?!?</p>
+                </div>
     
-
-
-<script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-    <script src="assets/javascript/game.js"></script>   
-</body>
-</html>
+                <p class="lead">
+                    <a id = "startBtn" class="btn btn-primary btn-lg" href="#" role="button">Start Game</a>
+                </p>
+                <div class="row">
+                    <div>
+                        <p id="gameStats"></p>
+                        <p id="gamePts"><h2 id="selectedPlay"></h2></p>
+                    </div>
+                </div>
+                
+            <div class="row" id="imageRow">
+                
+                <div class = "col-md-2">
+                    <p class = "thisNum" id="thisCardNum1"></p>
+                    <img class="image" id="c1" src="assets/images/flashgordon1.jpg" height= "250px" width= "175px">
+                </div>
+                <div class = "col-md-2">
+                    <p class = "thisNum" id="thisCardNum2"></p>
+                    <img class="image" id="c2" src="assets/images/flashgordon2.jpg"height= "250px" width= "175px">
+                </div>
+                <div class = "col-md-2">
+                    <p class = "thisNum" id="thisCardNum3"></p>
+                    <img class="image" id="c3" src="assets/images/flashgordon3.jpg"height= "250px" width= "175px">
+                </div>
+                <div class = "col-md-2">
+                    <p class = "thisNum" id="thisCardNum4"></p>
+                    <img class="image" id="c4" src="assets/images/flashgordon4.jpg"height= "250px" width= "175px">
+                </div>
+                <div class = "col-md-2">
+                    <p class = "thisNum" id="thisCardNum5"></p>
+                    <img class="image" id="c5" src="assets/images/flashgordon5.jpg"height= "250px" width= "175px">
+                </div>
+                
+    
+    
+    
+                <div class = "col-md-2">
+                </div>
+            </div>
+            <div class="row">
+            
+            <div id="playComm">
+                <p></p>
+                <p id="playNews"></p>
+                <h1 id="thanks"></h1>
+            </div>
+            </div>
+    
+    
+        </div>
+    </div>    
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+        <script src="assets/javascript/app.js"></script>
+    
+    </body>
+    </html>
