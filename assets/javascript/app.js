@@ -140,6 +140,15 @@ var answerOptIndex = Math.floor(Math.random(1) * questions.length);
 
 var wrongAnsIndex = Math.floor(Math.random(1) * wrongAnswers.length);
 
+// the for loop that will generate 3 wrong answers to display along side the correct answer
+
+for(var i = 1; i < 4; i++){
+
+    var wrongAnsIndex = Math.floor(Math.random(1) * wrongAnswers.length);
+
+    answerOptions.push (wrongAnsIndex);
+};
+
 
 // a <ul> of guesses that include the wrong and right guesses
 
