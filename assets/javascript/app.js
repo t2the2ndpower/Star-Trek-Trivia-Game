@@ -31,7 +31,7 @@ var losses; // holds the count for losses achieved
 
 var remainingTime;  // counts down the time
 
-var answerOptions;  //  an array of answer options
+var answerOptions = [];  //  an array of answer options
 
 var answerOptIndex;  //  the randomly generated index number used to determine the question to ask and the associated answer
 
@@ -137,31 +137,72 @@ clearInterval(remainingTime);
 
 var answerOptIndex = Math.floor(Math.random(1) * questions.length);
 
-// *** WORKING display the randomly selected question
+// *** WORKING: display the randomly selected question
 
 $("#thisQuestion").html("<h2>" + questions[answerOptIndex].ques + "</h2>"); 
 
 
-console.log(questions[answerOptIndex].ques);
-console.log(questions[answerOptIndex].ans);
+console.log("here is the question " + questions[answerOptIndex].ques);
+console.log("here is the ans " + questions[answerOptIndex].ans);
+console.log("here is the index " + answerOptIndex);
 
-// *** a random index number to use as a selection method for gathering all of the wrong answers
+// *** WORKING: a random index number to use as a selection method for gathering all of the wrong answers
 
 var wrongAnsIndex = Math.floor(Math.random(1) * wrongAnswers.length);
 
-// *** the for loop that will generate 3 wrong answers to display along side the correct answer
+// *** WORKING: the for loop that will generate 3 wrong answers to display along side the correct answer
 
 for(var i = 1; i < 4; i++){
 
     var wrongAnsIndex = Math.floor(Math.random(1) * wrongAnswers.length);
 
-    console.log(wrongAnsIndex);
+    console.log("wrong index = " + wrongAnsIndex);
 
     answerOptions.push(wrongAnsIndex);  // need to figure out why the push isn't working
 
-    
 };
 
+
+console.log("wrong answer index = " + answerOptions);
+
+// ALMOST WORKING  *** a function that pushes the correct answers index number in to the answerOptions array and displays the indexes in a random order (dun dun DUN!!!)
+
+// currently I have an index number that is displaying twice, ugh!
+function makeAnsOptArray(){
+    answerOptions.push(answerOptIndex);
+    answerOptions.push(wrongAnsIndex);
+
+    console.log("this is the array of answer options: " + answerOptions);
+
+   // trying an array shuffler
+
+   function shuffle(answerOptions) {
+    var m = answerOptions.length, t, i;
+  
+    // While there remain elements to shuffle…
+    while (m) {
+  
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+  
+      // And swap it with the current element.
+      t = answerOptions[m];
+      answerOptions[m] = answerOptions[i];
+      answerOptions[i] = t;
+    }
+  
+    return answerOptions;
+  }
+    
+
+
+
+        shuffle(answerOptions);
+        console.log("these should be random " + answerOptions);
+    }
+
+
+makeAnsOptArray();
 
 // *** a <ul> of guesses that include the wrong and right guesses
 
