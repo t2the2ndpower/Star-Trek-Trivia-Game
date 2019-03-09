@@ -48,27 +48,27 @@ ID's from html divs
         {
             ques: "Who was the lead in the original pilot for the successful TV science fiction show Star Trek?",
             ans: "Jeffrey Hunter",
-            pic: "Star Trek 1.jpg"
+            pic: "Star_Trek_1.jpg"
         },
         {
             ques: "What size crew did Captain Kirk command aboard the starship Enterprise?",
             ans: "Kirk's crew numbered 430.",
-            pic: "Star Trek 2.jpg"
+            pic: "Star_Trek_2.jpg"
         },
         {
             ques: "The Wrath of Khan was what number Star Trek movie?",
             ans: "II",
-            pic: "Star Trek 3.jpg"
+            pic: "Star_Trek_3.jpg"
         },
         {
             ques: "What famous former Star Trek actor directed Three Men and a Baby?",
             ans: "Leonard Nimoy",
-            pic: "Star Trek 4.jpg"
+            pic: "Star_Trek_4.jpg"
         },
         {
             ques: "In TV's original Star Trek series, how did a salt shaker serve as a prop on early episodes?",
             ans: "Dr. McCoy used it for a medical scanner.",
-            pic: "Star Trek 5.jpg"
+            pic: "Star_Trek_5.jpg"
         },
     ];
 
@@ -140,11 +140,14 @@ ID's from html divs
 // *** WORKING: display the randomly selected question
 
     $("#thisQuestion").html("<h2>" + questions[answerOptIndex].ques + "</h2>");
+    $("#questImg").html("<p><img src=assets/images/" + questions[answerOptIndex].pic + " height = 450px></p>");
+
 
 
 console.log("here is the question " + questions[answerOptIndex].ques);
 console.log("here is the ans " + questions[answerOptIndex].ans);
 console.log("here is the index " + answerOptIndex);
+console.log("here is the pic " + questions[answerOptIndex].pic);
 
 // *** WORKING: a random index number to use as a selection method for gathering all of the wrong answers
 
