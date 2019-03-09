@@ -105,11 +105,11 @@ var wrongAnswers = [
 ];
 
 
-// on click function to start the game
+// *** on click function to start the game
 
 $("btn").click("start the game");
 
-// timer that displays the countdown to the next question
+// *** WORKING timer that displays the countdown to the next question
 
 var remainingTime = setInterval(myTimer, 1000);
 var timeLeft = 30;
@@ -120,37 +120,50 @@ function myTimer() {
 
   if(timeLeft === -1){
 clearInterval(remainingTime);
+
   }
 };
 
-remainingTime;
+// remainingTime;  
 
-// timer that marks and answer wrong if time runs out and starts over with a new question once time is up
+// *** timer that marks and answer wrong if time runs out and starts over with a new question once time is up
 
- function remainingTime (){
+// function remainingTime (){
 
-};
+//};   // *** commented out until I pair it with the onclick button function
 
 
-// a random index number to use as a selection method for determining the question to ask
+// *** a random index number to use as a selection method for determining the question to ask
 
 var answerOptIndex = Math.floor(Math.random(1) * questions.length);
 
-// a random index number to use as a selection method for gathering all of the wrong answers
+// *** WORKING display the randomly selected question
+
+$("#thisQuestion").html("<h2>" + questions[answerOptIndex].ques + "</h2>"); 
+
+
+console.log(questions[answerOptIndex].ques);
+console.log(questions[answerOptIndex].ans);
+
+// *** a random index number to use as a selection method for gathering all of the wrong answers
 
 var wrongAnsIndex = Math.floor(Math.random(1) * wrongAnswers.length);
 
-// the for loop that will generate 3 wrong answers to display along side the correct answer
+// *** the for loop that will generate 3 wrong answers to display along side the correct answer
 
 for(var i = 1; i < 4; i++){
 
     var wrongAnsIndex = Math.floor(Math.random(1) * wrongAnswers.length);
 
-    answerOptions.push (wrongAnsIndex);
+    console.log(wrongAnsIndex);
+
+    answerOptions.push(wrongAnsIndex);  // need to figure out why the push isn't working
+
+    
 };
 
 
-// a <ul> of guesses that include the wrong and right guesses
+// *** a <ul> of guesses that include the wrong and right guesses
 
 
-// the total number of correct and incorrect guesses
+// *** the total number of correct and incorrect guesses
