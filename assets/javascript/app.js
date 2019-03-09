@@ -165,12 +165,12 @@ for(var i = 1; i < 4; i++){
 
 console.log("wrong answer index = " + answerOptions);
 
-// ALMOST WORKING  *** a function that pushes the correct answers index number in to the answerOptions array and displays the indexes in a random order (dun dun DUN!!!)
+// *** WORKING: a function that pushes the correct answers index number in to the answerOptions array and displays the indexes in a random order (dun dun DUN!!!)
 
 // currently I have an index number that is displaying twice, ugh!
 function makeAnsOptArray(){
     answerOptions.push(answerOptIndex);
-    answerOptions.push(wrongAnsIndex);
+    //answerOptions.push(wrongAnsIndex);  FOUND IT!!! this was alreay inserted into the array in the forLoop above!
 
     console.log("this is the array of answer options: " + answerOptions);
 
