@@ -224,14 +224,17 @@ console.log("this is the array of answer options: " + answerOptions);
 
         shuffle(answerOptions);
 
-console.log("these should be random " + answerOptions);
+//console.log("these should be random " + answerOptions);
     }
 
     makeAnsOptArray();
 
+console.log("these should be random and consoled out " + answerOptions);
 
+// *** NEXT TASK:  a <ul> of guesses that include the wrong and right guesses: can I automatically create <p> tags with each indexed item in it?
 
-// *** a <ul> of guesses that include the wrong and right guesses
+    $("#theseAnswers").html("<ul>" + questions[answerOptIndex].ques + "</ul>");
+    
 
 
 // *** the total number of correct and incorrect guesses
