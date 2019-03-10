@@ -207,6 +207,10 @@ console.log("wrong answer index = " + answerOptions);
 
 console.log("this is the array of answer options: " + answerOptions);
 
+}
+
+makeAnsOptArray();
+
 // need to create the array of actual possible answers by pulling in the correct one with the incorrect one first, then randomizing them, and THEN display them
 
     function gameAnsArray(){
@@ -267,17 +271,13 @@ console.log("these should be randomized " + gameAnswers);
 
 //console.log("these should be random " + answerOptions);
 
-    }
-
-    makeAnsOptArray();
-
 console.log("these should be random and consoled out " + answerOptions);
 
 // *** NEXT TASK:  a <ul> of guesses that include the wrong and right guesses: can I automatically create <p> tags with each indexed item in it?
 
 
 
-//$("#theseAnswers").html("<ul>" + questions[answerOptions].ans + "</ul>");
+$("#theseAnswers").html("<ul>" + gameAnswers + "</ul>");
     
 
 
