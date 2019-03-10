@@ -163,8 +163,8 @@ ID's from html divs
 
 // *** on click function to start the game
 
-    $("btn").click("start the game");
-
+    $("#startBtn").on("click", function() {
+        $("#startBtn").hide("#startBtn");
 // *** WORKING timer that displays the countdown to the next question
 
     var remainingTime = setInterval(myTimer, 1000);
@@ -176,9 +176,13 @@ ID's from html divs
 
         if (timeLeft === -1) {
             clearInterval(remainingTime);
+            $("#startBtn").show("#startBtn");
 
         }
     };
+
+    //myTimer();
+});
 
 // remainingTime;  
 
