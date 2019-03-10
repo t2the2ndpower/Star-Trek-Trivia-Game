@@ -165,6 +165,8 @@ ID's from html divs
 
     $("#startBtn").on("click", function() {
         $("#startBtn").hide("#startBtn");
+        $("#triviaSec").show("#etriviaSec");
+        genQandA();
 // *** WORKING timer that displays the countdown to the next question
 
     var remainingTime = setInterval(myTimer, 1000);
@@ -176,8 +178,11 @@ ID's from html divs
 
         if (timeLeft === -1) {
             clearInterval(remainingTime);
+            $("#startBtn").html("Next Round");
             $("#startBtn").show("#startBtn");
-
+            $("#thisQuestion").html("<h2>Outta Time!</h2>");
+            losses++;
+            
         }
     };
 
@@ -191,6 +196,13 @@ ID's from html divs
 // function remainingTime (){
 
 //};   // *** commented out until I pair it with the onclick button function
+
+// *** put the generation of random question and answer index numbers in a function
+
+function genQandA(){
+
+
+
 
 
 // *** WORKING: a random index number to use as a selection method for determining the question to ask
@@ -356,9 +368,13 @@ console.log(this);
 
         if(this.id === questions[answerOptIndex].ans.replace(/\s+/g, '')){
 
+            clearInterval(remainingTime);
             wins++;
             $("#questImg").html("<p><img src=assets/images/" + questions[answerOptIndex].pic2 + " height = 400px></p>");
             $("#aList").append("<p><h2>CORRECT YOU GENIUS YOU!</h2> The answer is...  <br><h2><br>" + questions[answerOptIndex].ans + "</h2></p>");
+            //genQandA();
+            
+
 
 console.log("correct click!" + questions[answerOptIndex].ans.replace(/\s+/g, ''));
 console.log("Losses!" + losses);  
@@ -384,7 +400,7 @@ console.log("I clicked it!");
     });
     
 
-
+};
 // *** WORKIG:  the total number of correct and incorrect guesses:   Included them in the if statement
 
 // *** need to put all of this within the time element
