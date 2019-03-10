@@ -364,10 +364,12 @@ console.log(this);
     $("li").on("click", function(event) {
 
         
-        // if statement goes here: if id of clicked = questionsAns.replace(/\s+/g, '') then add 1 point to wins, else add 1 point to losses
+    // if statement goes here: if id of clicked = questionsAns.replace(/\s+/g, '') then add 1 point to wins, else add 1 point to losses
 
         if(this.id === questions[answerOptIndex].ans.replace(/\s+/g, '')){
 
+    // need the timer to stop and the next round button to appear upon winning guess
+    
             clearInterval(remainingTime);
             wins++;
             $("#questImg").html("<p><img src=assets/images/" + questions[answerOptIndex].pic2 + " height = 400px></p>");
