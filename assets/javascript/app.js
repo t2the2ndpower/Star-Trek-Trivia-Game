@@ -25,9 +25,9 @@ ID's from html divs
 
 // Variables to be used
 
-    var wins; // holds the count for wins achieved
+    var wins = 0; // holds the count for wins achieved
 
-    var losses; // holds the count for losses achieved
+    var losses = 0; // holds the count for losses achieved
 
     var remainingTime;  // counts down the time
 
@@ -343,12 +343,34 @@ console.log(this);
 
     })
 
-//  *** NEXT TASK:  now I need to make them clickable
+//  *** WORKING:  NEXT TASK:  now I need to make them clickable
 
     $("li").on("click", function(event) {
+
         
         // if statement goes here: if id of clicked = questionsAns.replace(/\s+/g, '') then add 1 point to wins, else add 1 point to losses
 
+        if(this.id === questions[answerOptIndex].ans.replace(/\s+/g, '')){
+
+            wins++;
+            $("#questImg").html("<p><img src=assets/images/" + questions[answerOptIndex].pic2 + " height = 400px></p>");
+            $("#aList").append("<p><h2>CORRECT YOU GENIUS YOU!</h2> The answer is...  <br><h2><br>" + questions[answerOptIndex].ans + "</h2></p>");
+
+console.log("correct click!" + questions[answerOptIndex].ans.replace(/\s+/g, ''));
+console.log("Losses!" + losses);  
+console.log("Wins!" + wins); 
+
+        } else {
+
+            losses++;
+            $("#questImg").html("<p><img src=assets/images/" + questions[answerOptIndex].pic2 + " height = 400px></p>");
+            $("#aList").append("<p><h2>INCORRECT!</h2>You may actually need to ask somebody, ijs.<br> The answer is... <br><h2><br>" + questions[answerOptIndex].ans + "</h2></p>");
+
+console.log("incorrect click!" + questions[answerOptIndex].ans.replace(/\s+/g, ''));    
+console.log("Losses!" + losses);  
+console.log("Wins!" + wins);  
+
+        };
 
 
 console.log("I clicked it!");
@@ -359,6 +381,8 @@ console.log("I clicked it!");
     
 
 
-// *** the total number of correct and incorrect guesses
+// *** WORKIG:  the total number of correct and incorrect guesses:   Included them in the if statement
+
+// *** need to put all of this within the time element
 
 
