@@ -33,13 +33,15 @@ ID's from html divs
 
     var answerOptions = [];  //  an array of answer options
 
-    var answerOptIndex;  //  the randomly generated index number used to determine the question to ask and the associated answer
+    var answerOptIndex = [];  //  the randomly generated index number used to determine the question to ask and the associated answer
 
     var wrongAnswers;  //  an array of wrong answer options
 
     var wrongAnsIndex;  //  the randomly generated index number used to determine the series of wrong answers to display alongside the correct answer
 
     var wrongAnsIndexes = [];
+
+    var gameAnswers = [];
 
 // Array of Objects for questions and answers
 
@@ -164,11 +166,14 @@ console.log("wrong index = " + wrongAnsIndex);
 
         //answerOptions.push(wrongAnsIndex);  // need to figure out why the push isn't working, FIXED IT: need to change the variable
         wrongAnsIndexes.push(wrongAnsIndex);
+        gameAnswers.push(wrongAnswers[wrongAnsIndex]);
+    
+      
 
         //return wrongAnsIndexes;
 
     };
-
+console.log("here is the array of a string of wrong ans: " + gameAnswers);  
 console.log("this is the wrongAnsIndexes = " + wrongAnsIndexes);
 
 
@@ -202,29 +207,66 @@ console.log("wrong answer index = " + answerOptions);
 
 console.log("this is the array of answer options: " + answerOptions);
 
-        // trying an array shuffler
+// need to create the array of actual possible answers by pulling in the correct one with the incorrect one first, then randomizing them, and THEN display them
 
-        function shuffle(answerOptions) {
-            var m = answerOptions.length, t, i;
+    function gameAnsArray(){
 
-            // While there remain elements to shuffle…
-            while (m) {
+        gameAnswers.push(questions[answerOptIndex].ans);
 
-                // Pick a remaining element…
-                i = Math.floor(Math.random() * m--);
+console.log("these are the game answers: " + gameAnswers);
 
-                // And swap it with the current element.
-                t = answerOptions[m];
-                answerOptions[m] = answerOptions[i];
-                answerOptions[i] = t;
-            }
+    };
 
-            return answerOptions;
+    gameAnsArray();    
+
+// *** WORKING: trying an array shuffler - after getting the actual values above need to shuffle them so the correct answer isn't in the same position each time a trivia question is displayed
+
+    function shuffle(gameAnswers) {
+        var m = gameAnswers.length, t, i;
+
+        // While there remain elements to shuffle…
+        while (m) {
+
+            // Pick a remaining element…
+            i = Math.floor(Math.random() * m--);
+
+            // And swap it with the current element.
+            t = gameAnswers[m];
+            gameAnswers[m] = gameAnswers[i];
+            gameAnswers[i] = t;
         }
 
-        shuffle(answerOptions);
+        return gameAnswers;
+    }
+
+    shuffle(gameAnswers);
+
+console.log("these should be randomized " + gameAnswers);    
+
+        // *** WORKING VERSION:  This one works but needed to change the input array as shown above
+
+        // function shuffle(answerOptions) {
+        //     var m = answerOptions.length, t, i;
+
+        //     // While there remain elements to shuffle…
+        //     while (m) {
+
+        //         // Pick a remaining element…
+        //         i = Math.floor(Math.random() * m--);
+
+        //         // And swap it with the current element.
+        //         t = answerOptions[m];
+        //         answerOptions[m] = answerOptions[i];
+        //         answerOptions[i] = t;
+        //     }
+
+        //     return answerOptions;
+        // }
+
+        // shuffle(answerOptions);
 
 //console.log("these should be random " + answerOptions);
+
     }
 
     makeAnsOptArray();
@@ -233,9 +275,9 @@ console.log("these should be random and consoled out " + answerOptions);
 
 // *** NEXT TASK:  a <ul> of guesses that include the wrong and right guesses: can I automatically create <p> tags with each indexed item in it?
 
-// need to create the array of actual possible answers by pulling in the correct one with the incorrect one first, then randomizing them, and THEN display them
 
-    $("#theseAnswers").html("<ul>" + questions[answerOptions].ans + "</ul>");
+
+//$("#theseAnswers").html("<ul>" + questions[answerOptions].ans + "</ul>");
     
 
 
