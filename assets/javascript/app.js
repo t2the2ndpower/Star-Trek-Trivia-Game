@@ -50,27 +50,74 @@ ID's from html divs
         {
             ques: "Who was the lead in the original pilot for the successful TV science fiction show Star Trek?",
             ans: "Jeffrey Hunter",
-            pic: "Star_Trek_1.jpg"
+            pic1: "Star_Trek_1a.jpg",
+            pic2: "Star_Trek_1b.jpg"
         },
         {
             ques: "What size crew did Captain Kirk command aboard the starship Enterprise?",
-            ans: "Kirk's crew numbered 430.",
-            pic: "Star_Trek_2.jpg"
+            ans: "Kirk's crew numbered 430",
+            pic: "Star_Trek_2a.jpg",
+            pic2: "Star_Trek_2b.jpg"
         },
         {
             ques: "The Wrath of Khan was what number Star Trek movie?",
             ans: "II",
-            pic: "Star_Trek_3.jpg"
+            pic: "Star_Trek_3a.jpg",
+            pic2: "Star_Trek_3b.jpg"
         },
         {
             ques: "What famous former Star Trek actor directed Three Men and a Baby?",
             ans: "Leonard Nimoy",
-            pic: "Star_Trek_4.jpg"
+            pic: "Star_Trek_4a.jpg",
+            pic2: "Star_Trek_4b.jpg"
         },
         {
             ques: "In TV's original Star Trek series, how did a salt shaker serve as a prop on early episodes?",
-            ans: "Dr. McCoy used it for a medical scanner.",
-            pic: "Star_Trek_5.jpg"
+            ans: "Dr. McCoy used it for a medical scanner",
+            pic: "Star_Trek_5a.jpg",
+            pic2: "Star_Trek_5b.jpg"
+        },
+        {
+            ques: "What was antimatter used for on the starship Enterprise on the Star Trek TV series?",
+            ans: "To power the ships engines",
+            pic: "Star_Trek_6a.jpg",
+            pic2: "Star_Trek_6b.jpg"
+        },
+        {
+            ques: "What is in Mr. Spock's blood that gives him green skin?",
+            ans: "Traces of nickel and copper",
+            pic: "Star_Trek_7a.jpg",
+            pic2: "Star_Trek_7b.jpg"
+        },
+        {
+            ques: "In the original draft for the Star Trek TV series what was the name of the U.S.S. Enterprise?",
+            ans: "The U.S.S. Yorktown",
+            pic: "Star_Trek_8a.jpg",
+            pic2: "Star_Trek_8b.jpg"
+        },
+        {
+            ques: "In the Star Trek series, the part of Ensign Chekov  was played by who?",
+            ans: "Walter Koenig",
+            pic: "Star_Trek_9a.jpg",
+            pic2: "Star_Trek_9b.jpg"
+        },
+        {
+            ques: "Apart from Star Trek, the actors Kirk, Scott, Spock, and Sulu appeared on what other program?",
+            ans: "The Twilight Zone",
+            pic: "Star_Trek_10a.jpg",
+            pic2: "Star_Trek_10b.jpg"
+        },
+        {
+            ques: "In Star Trek, what is the name of Mr.  Spock's father?",
+            ans: "Sarek",
+            pic: "Star_Trek_11a.jpg",
+            pic2: "Star_Trek_11b.jpg"
+        },
+        {
+            ques: "On the first Star Trek movie, who was the science advisor?",
+            ans: "Isaac Asimov",
+            pic: "Star_Trek_12a.jpg",
+            pic2: "Star_Trek_12b.jpg"
         },
     ];
 
@@ -273,7 +320,7 @@ console.log("these should be randomized " + gameAnswers);
 
 console.log("these should be random and consoled out " + answerOptions);
 
-// *** NEXT TASK:  a <ul> of guesses that include the wrong and right guesses: can I automatically create <p> tags with each indexed item in it?
+// *** WORKING: NEXT TASK:  a <ul> of guesses that include the wrong and right guesses: can I automatically create <p> tags with each indexed item in it?
 
             //$("#theseAnswers").html("<ul>" + gameAnswers + "</ul>");
 
@@ -289,8 +336,10 @@ console.log(this);
 
     })
 
-    // now I need to make them clickable
+//  *** NEXT TASK:  now I need to make them clickable
     
 
 
 // *** the total number of correct and incorrect guesses
+
+
