@@ -347,9 +347,11 @@ console.log(this);
 
     $("li").on("click", function(event) {
         
+        // if statement goes here: if id of clicked = questionsAns.replace(/\s+/g, '') then add 1 point to wins, else add 1 point to losses
 
-        
-        console.log("I clicked it!");
+
+
+console.log("I clicked it!");
 
 
 
