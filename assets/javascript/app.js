@@ -275,9 +275,20 @@ console.log("these should be random and consoled out " + answerOptions);
 
 // *** NEXT TASK:  a <ul> of guesses that include the wrong and right guesses: can I automatically create <p> tags with each indexed item in it?
 
+            //$("#theseAnswers").html("<ul>" + gameAnswers + "</ul>");
 
 
-$("#theseAnswers").html("<ul>" + gameAnswers + "</ul>");
+    // trying out this solution IT WORKED!!!
+
+    $.each(gameAnswers, function(i){
+
+        $("#aList").append("<li>" + gameAnswers[i] + "</li>");
+
+console.log(this);
+
+    })
+
+    // now I need to make them clickable
     
 
 
