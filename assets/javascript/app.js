@@ -282,7 +282,8 @@ console.log("these should be random and consoled out " + answerOptions);
 
     $.each(gameAnswers, function(i){
 
-        $("#aList").append("<li>" + gameAnswers[i] + "</li>");
+       // $("#aList").append("<li>" + gameAnswers[i] + "</li>");
+        $("#aList").append('<li id=' + gameAnswers[i].replace(/\s+/g, '') + '>' + gameAnswers[i] + '</li>');  // putting the answers as an id in the li tag to reference for on click event.  removed the white spaces from the id tag.
 
 console.log(this);
 
