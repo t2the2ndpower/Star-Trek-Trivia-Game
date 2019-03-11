@@ -369,13 +369,15 @@ console.log(this);
         if(this.id === questions[answerOptIndex].ans.replace(/\s+/g, '')){
 
     // need the timer to stop and the next round button to appear upon winning guess
-    
+
             clearInterval(remainingTime);
             wins++;
             $("#questImg").html("<p><img src=assets/images/" + questions[answerOptIndex].pic2 + " height = 400px></p>");
             $("#aList").append("<p><h2>CORRECT YOU GENIUS YOU!</h2> The answer is...  <br><h2><br>" + questions[answerOptIndex].ans + "</h2></p>");
-            //genQandA();
-            
+            $("#startBtn").html("Next Round");
+            $("#startBtn").show("#startBtn");
+            $("#timer").html("0");
+            gameAnswers.pop(questions[answerOptIndex].ans);
 
 
 console.log("correct click!" + questions[answerOptIndex].ans.replace(/\s+/g, ''));
